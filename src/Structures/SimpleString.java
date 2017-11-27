@@ -50,9 +50,9 @@ public class SimpleString extends Object implements Interfaces.Numerical<SimpleS
 
     @Override
     public int compareTo(SimpleString anotherSimpleString) {
-//        return data.compareTo(anotherSimpleString.data);
-        if (this.data.equals(anotherSimpleString.data)) return 0;
-        else return -1;
+        return data.compareTo(anotherSimpleString.data);
+//        if (this.data.equals(anotherSimpleString.data)) return 0;
+//        else return -1;
     }
 
     public String toString(){

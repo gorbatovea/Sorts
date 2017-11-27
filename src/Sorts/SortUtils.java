@@ -52,6 +52,14 @@ public class SortUtils {
         return isSorted;
     }
 
+    public static boolean isArraySorted(SimpleString[] array) {
+        boolean isSorted = true;
+        for (int i = 0; i < array.length - 1 && isSorted; i++) {
+            isSorted = array[i].compareTo(array[i + 1]) <= 0;
+        }
+        return isSorted;
+    }
+
     public static <T> boolean isArraySorted(T[] array, Comparator<T> comparator) {
         boolean isSorted = true;
         for (int i = 0; i < array.length - 1 && isSorted; i++) {
@@ -82,6 +90,18 @@ public class SortUtils {
                 tempStr = tempStr.concat("" + (char)chr);
             }
             list[j] = new SimpleString(tempStr);
+        }
+        return list;
+    }
+
+    public static SimpleInteger[] generateSimpleInteger(int size){
+        SimpleInteger[] list = new SimpleInteger[size];
+        for(int i = 0; i < size; i++){
+            list[i] = new SimpleInteger(i + 1);
+        }
+        for (int i = list.length - 1; i >= 0; i--) {
+            int j = r.nextInt(i + 1);
+            SortUtils.swap(list, i, j);
         }
         return list;
     }
