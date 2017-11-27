@@ -25,9 +25,26 @@ public class Main{
     }
 
     public static void main(String[] args) {
+        /*for(int i = 0; i < 50; i++) {
+            IntKeyObject[] list = SortUtils.generateArrayIntKeyObjects(100);
+            checkSort(list, new CountingSort<>());
+        }
         for(int i = 0; i < 50; i++) {
-            SimpleInteger[] list = SortUtils.generateSimpleInteger(5);
-            checkSort(list, new LSDSort<>());
+            Integer[] list = SortUtils.generateArray(100);
+            checkSort(list, new HeapSort<>());
+        }
+        for(int i = 0; i < 50; i++) {
+            Integer[] list = SortUtils.generateArray(100);
+            checkSort(list, new MergeSort<>());
+        }
+        for(int i = 0; i < 50; i++) {
+            Integer[] list = SortUtils.generateArray(100);
+            checkSort(list, new QuickSort<>());
+        }
+        */
+        for(int i = 0; i < 50; i++) {
+            Integer[] list = SortUtils.generateArray(100);
+            checkSort(list, new QuickSort<>());
         }
         System.out.println("DONE!");
     }

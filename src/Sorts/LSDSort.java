@@ -56,24 +56,4 @@ public class LSDSort<T extends Object & Numerical<T>> extends AbstractSortOnComp
                 max = anArray.getDigitMaxValue();
         return max;
     }
-
-    @Override
-    protected void swap(T[] array, int i, int j) {
-        super.swap(array, i, j);
-    }
-
-    @Override
-    protected int compare(T firstKey, T secondKey) {
-        return super.compare(firstKey, secondKey);
-    }
-
-    @Override
-    protected boolean greater(T firstKey, T secondKey) {
-        return super.greater(firstKey, secondKey);
-    }
-
-    @Override
-    protected boolean lesser(T firstKey, T secondKey) {
-        return super.lesser(firstKey, secondKey);
-    }
 }
