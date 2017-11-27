@@ -3,8 +3,8 @@ package Structures;
 import Interfaces.IntKeyObject;
 
 public class SomeIntKeyObject<T> implements IntKeyObject<T>{
-    public int key;
-    public T value;
+    public final int key;
+    public final T value;
 
     public SomeIntKeyObject(int key,T value){
         this.key = key;
@@ -23,8 +23,6 @@ public class SomeIntKeyObject<T> implements IntKeyObject<T>{
 
     @Override
     public int compareTo(IntKeyObject anotherIntKeyObject) {
-        if (this.getKey() < anotherIntKeyObject.getKey()) return -1;
-        if (this.getKey() > anotherIntKeyObject.getKey()) return 1;
-        return 0;
+        return Integer.compare(this.getKey(), anotherIntKeyObject.getKey());
     }
 }

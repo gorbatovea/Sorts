@@ -19,7 +19,7 @@ public class InsertionSort<T> extends AbstractSortOnComparisons<T>{
 
     public void sort(T[] arr) {
         if (arr.length == 0) return;
-        DoubleLinkedList<T> list = new DoubleLinkedList<T>();
+        DoubleLinkedList<T> list = new DoubleLinkedList<>();
         Node<T> currentNode;
         for (T value : arr) {
             if (list.size() == 0) {

@@ -98,7 +98,7 @@ public class DoubleLinkedList<T> {
             this.addFront(obj);
         }
         if (index == 0){
-            Node<T> newNode = new Node<T>(obj);
+            Node<T> newNode = new Node<>(obj);
             newNode.next = this.head;
             head.previous = newNode;
             this.head = newNode;
@@ -106,7 +106,7 @@ public class DoubleLinkedList<T> {
             return;
         }
         if (index == this.size){
-            Node<T> newNode = new Node<T>(obj);
+            Node<T> newNode = new Node<>(obj);
             newNode.previous = this.tail;
             tail.next = newNode;
             this.tail = newNode;
@@ -114,7 +114,7 @@ public class DoubleLinkedList<T> {
             return;
         }
         if ((index > 0) && (index < this.size)){
-            Node<T> newNode = new Node<T>(obj);
+            Node<T> newNode = new Node<>(obj);
             Node<T> currentNode = this.get(index);
             newNode.next = currentNode;
             newNode.previous = currentNode.previous;

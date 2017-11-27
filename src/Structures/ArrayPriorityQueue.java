@@ -5,7 +5,7 @@ import java.util.Comparator;
 public class ArrayPriorityQueue<Key>{
 
     private Key[] elementData;
-    private Comparator<Key> comparator;
+    private final Comparator<Key> comparator;
     final private int DEFAULT_SIZE;
     private int size = 0;
     private int capacity;
@@ -90,7 +90,6 @@ public class ArrayPriorityQueue<Key>{
             this.elementData[itemNumber] = this.elementData[(itemNumber - 1) / 2];
             this.elementData[(itemNumber - 1) / 2] = temp;
             itemNumber = (itemNumber - 1) / 2;
-            temp = null;
         }
 
     }
@@ -99,7 +98,6 @@ public class ArrayPriorityQueue<Key>{
         Key temp = this.elementData[i];
         this.elementData[i] = this.elementData[j];
         this.elementData[j] = temp;
-        temp = null;
     }
 
     private void siftDown(int pos) {
@@ -141,20 +139,16 @@ public class ArrayPriorityQueue<Key>{
     private void grow() {
 
         Key[] newArray = (Key[]) new Object[capacity + capacity / 2];
-        for(int i = 0; i < this.size - 1; i++)
-            newArray[i] = this.elementData[i];
+        System.arraycopy(this.elementData, 0, newArray, 0, this.size - 1);
         this.capacity +=capacity / 2;
         this.elementData = newArray;
-        newArray = null;
     }
 
     private void shrink() {
         Key[] newArray = (Key[]) new Object[this.capacity / 2];
         this.capacity /= 2;
-        for(int i = 0; i < this.size; i++)
-            newArray[i] = this.elementData[i];
+        System.arraycopy(this.elementData, 0, newArray, 0, this.size);
         this.elementData = newArray;
-        newArray = null;
     }
 
     private boolean greater(int i, int j) {

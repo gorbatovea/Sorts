@@ -1,7 +1,7 @@
 package Structures;
 
 public class Node<T> {
-    public T value;
+    public final T value;
     public Node<T> next;
     public Node<T> previous;
 

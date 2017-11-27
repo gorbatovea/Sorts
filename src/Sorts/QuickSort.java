@@ -3,8 +3,8 @@ package Sorts;
 import java.util.Comparator;
 
 public class QuickSort<T> extends AbstractSortOnComparisons<T>{
-    private int TRASH_HOLD = 15;
-    private InsertionSort<T> nestedSort;
+    private final int TRASH_HOLD = 15;
+    private final InsertionSort<T> nestedSort;
 
     public QuickSort(){
         super();

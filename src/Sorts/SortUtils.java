@@ -69,9 +69,9 @@ public class SortUtils {
     }
 
     public static IntKeyObject[] generateArrayIntKeyObjects(int size){
-        IntKeyObject[] list = (IntKeyObject[]) new IntKeyObject[size];
+        IntKeyObject[] list = new IntKeyObject[size];
         for(int i = 0; i < list.length; i++){
-            list[i] = (SomeIntKeyObject) new SomeIntKeyObject(i + 1, i + 1);
+            list[i] = new SomeIntKeyObject(i + 1, i + 1);
         }
         for (int i = list.length - 1; i >= 0; i--) {
             int j = r.nextInt(i + 1);
@@ -83,7 +83,7 @@ public class SortUtils {
     public static SimpleString[] generateSimpleString(int size){
         SimpleString[] list = new SimpleString[size];
         for(int j = 0; j < size; j++){
-            String tempStr = new String();
+            String tempStr = "";
             int length = 1 + (int)(Math.random() * size);
             for(int i = 1; i <= length; i++){
                 int chr = FIRST_CHAR + (int)(Math.random() * (LAST_CHAR - FIRST_CHAR));

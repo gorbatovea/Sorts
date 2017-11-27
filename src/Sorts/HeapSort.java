@@ -4,9 +4,7 @@ import Structures.ArrayPriorityQueue;
 import java.util.Comparator;
 
 public class HeapSort<T> extends AbstractSortOnComparisons<T> {
-    private Comparator<T> comparator =(o1, o2) -> {
-        return super.compare(o1, o2);
-    };
+    private final Comparator<T> comparator = super::compare;
     public HeapSort(){
         super();
     }
@@ -17,7 +15,7 @@ public class HeapSort<T> extends AbstractSortOnComparisons<T> {
     }
 
     public void sort(T[] list){
-        ArrayPriorityQueue<T> heap = new ArrayPriorityQueue<T>(list, comparator);
+        ArrayPriorityQueue<T> heap = new ArrayPriorityQueue<>(list, comparator);
         for(int i = 0; i < list.length; i++)
             list[i] = heap.extractMin();
     }

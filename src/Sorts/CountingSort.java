@@ -12,13 +12,14 @@ public class CountingSort<T extends IntKeyObject> extends AbstractSortOnComparis
 
     public void sort(T[] list) {
         int maxValue = 1;
-        for (int i = 0; i < list.length; i++) {
-            if (list[i].getKey() > maxValue) maxValue = list[i].getKey();
-        }
+        for (T aList : list)
+            if (aList.getKey() > maxValue) {
+                maxValue = aList.getKey();
+            }
         int[] count = new int[maxValue + 1];
 
-        for (int i = 0; i < list.length; i++) {
-            count[list[i].getKey()]++;
+        for (T aList : list) {
+            count[aList.getKey()]++;
         }
         int[] objectsPositions = new int[count.length];
         int lastPosition = 0;
@@ -30,8 +31,6 @@ public class CountingSort<T extends IntKeyObject> extends AbstractSortOnComparis
         for(int i = list.length - 1; i >= 0; i--){
             sortedList[objectsPositions[list[i].getKey()]--] = list[i];
         }
-        for(int i = 0; i < list.length; i++){
-            list[i] = sortedList[i];
-        }
+        System.arraycopy(sortedList, 0, list, 0, list.length);
     }
 }

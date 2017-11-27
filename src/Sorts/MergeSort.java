@@ -41,8 +41,7 @@ public class MergeSort <T> extends AbstractSortOnComparisons<T>{
                 mergedList[mergedIndex++] = list[indexRight++];
             }
         int index = start;
-        for(int i = 0; i < mergedList.length; i++){
-            list[index++] = mergedList[i];
-        }
+        for (T aMergedList : mergedList)
+            list[index++] = aMergedList;
     }
 }

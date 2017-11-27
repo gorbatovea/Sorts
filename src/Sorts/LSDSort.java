@@ -51,9 +51,9 @@ public class LSDSort<T extends Object & Numerical<T>> extends AbstractSortOnComp
 
     private int findMaxDigitValue(T[] array) {
         int max = 0;
-        for(int i = 0; i < array.length; i++){
-            if (array[i].getDigitMaxValue() > max) max = array[i].getDigitMaxValue();
-        }
+        for (T anArray : array)
+            if (anArray.getDigitMaxValue() > max)
+                max = anArray.getDigitMaxValue();
         return max;
     }
 
